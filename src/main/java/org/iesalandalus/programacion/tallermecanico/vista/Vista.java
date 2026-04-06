@@ -152,8 +152,8 @@ public class Vista {
         try {
             Cliente cliente = Consola.leerClienteDni();
             Vehiculo vehiculo = Consola.leerVehiculoMatricula();
-            LocalDate fechaInicio = Consola.leerFechaInicio();
-            controlador.insertar(new Revision(cliente, vehiculo, fechaInicio));
+            LocalDate fechaCierre = Consola.leerFechaCierre();
+            controlador.insertar(new Revision(cliente, vehiculo, fechaCierre));
             System.out.println("Revisión insertada correctamente.");
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
@@ -165,8 +165,8 @@ public class Vista {
         try {
             Cliente cliente = Consola.leerClienteDni();
             Vehiculo vehiculo = Consola.leerVehiculoMatricula();
-            LocalDate fechaInicio = Consola.leerFechaInicio();
-            Revision resultado = controlador.buscar(new Revision(cliente, vehiculo, fechaInicio));
+            LocalDate fechaCierre = Consola.leerFechaCierre();
+            Revision resultado = controlador.buscar(new Revision(cliente, vehiculo, fechaCierre));
             System.out.println(resultado != null ? resultado : "No se encontró la revisión.");
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
@@ -178,8 +178,8 @@ public class Vista {
         try {
             Cliente cliente = Consola.leerClienteDni();
             Vehiculo vehiculo = Consola.leerVehiculoMatricula();
-            LocalDate fechaInicio = Consola.leerFechaInicio();
-            controlador.anadirHoras(new Revision(cliente, vehiculo, fechaInicio), Consola.leerHoras());
+            LocalDate fechaCierre = Consola.leerFechaCierre();
+            controlador.anadirHoras(new Revision(cliente, vehiculo, fechaCierre), Consola.leerHoras());
             System.out.println("Horas añadidas correctamente.");
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
@@ -191,8 +191,8 @@ public class Vista {
         try {
             Cliente cliente = Consola.leerClienteDni();
             Vehiculo vehiculo = Consola.leerVehiculoMatricula();
-            LocalDate fechaInicio = Consola.leerFechaInicio();
-            controlador.anadirPrecioMaterial(new Revision(cliente, vehiculo, fechaInicio), Consola.leerPrecioMaterial());
+            LocalDate fechaCierre = Consola.leerFechaCierre();
+            controlador.anadirPrecioMaterial(new Revision(cliente, vehiculo, fechaCierre), Consola.leerPrecioMaterial());
             System.out.println("Precio de material añadido correctamente.");
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
@@ -204,8 +204,8 @@ public class Vista {
         try {
             Cliente cliente = Consola.leerClienteDni();
             Vehiculo vehiculo = Consola.leerVehiculoMatricula();
-            LocalDate fechaInicio = Consola.leerFechaInicio();
-            controlador.cerrar(new Revision(cliente, vehiculo, fechaInicio), Consola.leerFechaCierre());
+            LocalDate fechaCierre = Consola.leerFechaCierre();
+            controlador.cerrar(new Revision(cliente, vehiculo, fechaCierre), Consola.leerFechaCierre());
             System.out.println("Revisión cerrada correctamente.");
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
@@ -217,8 +217,8 @@ public class Vista {
         try {
             Cliente cliente = Consola.leerClienteDni();
             Vehiculo vehiculo = Consola.leerVehiculoMatricula();
-            LocalDate fechaInicio = Consola.leerFechaInicio();
-            controlador.borrar(new Revision(cliente, vehiculo, fechaInicio));
+            LocalDate fechaCierre = Consola.leerFechaCierre();
+            controlador.borrar(new Revision(cliente, vehiculo, fechaCierre));
             System.out.println("Revisión borrada correctamente.");
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());

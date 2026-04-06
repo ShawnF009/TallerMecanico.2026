@@ -105,10 +105,6 @@ public class Consola {
         return leerReal("Precio del material: ");
     }
 
-    public static LocalDate leerFechaInicio() {
-        return leerFecha("Fecha de inicio (" + CADENA_FORMATO_FECHA + "): ");
-    }
-
     public static LocalDate leerFechaCierre() {
         return leerFecha("Fecha de cierre (" + CADENA_FORMATO_FECHA + "): ");
     }
