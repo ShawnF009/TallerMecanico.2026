@@ -21,8 +21,8 @@ public class Consola {
 
     public static void mostrarMenu() {
         mostrarCabecera("Taller Mecánico");
-        for (Opcion o : Opcion.values()) {
-            System.out.println(o);
+        for (Opcion opcion : Opcion.values()) {
+            System.out.println(opcion);
         }
     }
 
@@ -55,14 +55,16 @@ public class Consola {
     }
 
     public static Opcion elegirOpcion() {
-        int numero;
+        Opcion opcion = null;
         do {
-            numero = leerEntero("Elige una opción: ");
-            if (!Opcion.esValida(numero)) {
+            try {
+                opcion = Opcion.get(leerEntero("\nElige una opción:"));
+            } catch (IllegalArgumentException e){
+                mostrarMenu();
                 System.out.println("ERROR: Opción no válida. Inténtalo de nuevo.");
             }
-        } while (!Opcion.esValida(numero));
-        return Opcion.get(numero);
+        } while (opcion == null);
+        return opcion;
     }
 
     public static Cliente leerCliente() {

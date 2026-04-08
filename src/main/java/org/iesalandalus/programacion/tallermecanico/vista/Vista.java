@@ -20,10 +20,13 @@ public class Vista {
     }
 
     public void comenzar() {
+        Opcion opcion;
         do {
             Consola.mostrarMenu();
-            ejecutar(Consola.elegirOpcion());
+            opcion = Consola.elegirOpcion();
+            ejecutar(opcion);
         } while (Consola.elegirOpcion() != Opcion.SALIR);
+        controlador.terminar();
     }
 
     public void terminar() {

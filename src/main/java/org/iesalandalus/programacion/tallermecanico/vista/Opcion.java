@@ -39,9 +39,6 @@ public enum Opcion {
     }
 
     public static boolean esValida(int numeroOpcion) {
-        if(numeroOpcion < 1 || numeroOpcion > 19){
-            throw new IllegalArgumentException("El número de opción introducido no es válido");
-        }
         return opciones.containsKey(numeroOpcion);
     }
 
