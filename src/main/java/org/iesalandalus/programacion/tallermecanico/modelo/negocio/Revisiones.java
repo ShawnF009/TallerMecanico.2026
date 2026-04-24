@@ -60,7 +60,7 @@ public class Revisiones {
         LocalDate fechaInicio = revision.getFechaInicio();
 
         for (Revision revisionEnCurso : coleccionRevisiones) {
-            if (!revisionEnCurso.estaCerrada()) {
+            if (!revisionEnCurso.estaCerrado()) {
                 if (revisionEnCurso.getCliente().equals(cliente)) {
                     throw new TallerMecanicoExcepcion("El cliente tiene otra revisión en curso.");
                 }
@@ -71,7 +71,7 @@ public class Revisiones {
         }
 
         for (Revision revisionEnCurso : coleccionRevisiones) {
-            if (revisionEnCurso.estaCerrada()) {
+            if (revisionEnCurso.estaCerrado()) {
                 if (revisionEnCurso.getCliente().equals(cliente) && !revisionEnCurso.getFechaFin().isBefore(fechaInicio)) {
                     throw new TallerMecanicoExcepcion("El cliente tiene una revisión posterior.");
                 }
@@ -103,7 +103,7 @@ public class Revisiones {
             throw new TallerMecanicoExcepcion("No existe ninguna revisión igual.");
         }
 
-        coleccionRevisiones.get(indice).anadirPrecioMaterial(precioMaterial);
+        coleccionRevisiones.get(indice).anadirHoras((int) precioMaterial);
     }
 
     public void cerrar(Revision revision, LocalDate fechaFin) throws TallerMecanicoExcepcion {
