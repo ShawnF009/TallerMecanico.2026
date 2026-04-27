@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.tallermecanico.modelo;
+package org.iesalandalus.programacion.tallermecanico;
 
 public class TallerMecanicoExcepcion extends Exception {
     public TallerMecanicoExcepcion(String message) {
