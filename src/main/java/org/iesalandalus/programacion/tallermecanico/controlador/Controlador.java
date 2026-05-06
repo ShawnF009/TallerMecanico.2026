@@ -63,11 +63,7 @@ public class Controlador implements IControlador {
                 case CERRAR_TRABAJO -> cerrarTrabajo();
                 case SALIR -> terminar();
             }
-        } catch (TallerMecanicoExcepcion e) {
-            vista.notificarResultado(evento, e.getMessage(), false);
-        } catch (IllegalArgumentException e) {
-            vista.notificarResultado(evento, e.getMessage(), false);
-        } catch (NullPointerException e) {
+        } catch (TallerMecanicoExcepcion | IllegalArgumentException | NullPointerException e) {
             vista.notificarResultado(evento, e.getMessage(), false);
         }
     }
