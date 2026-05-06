@@ -34,7 +34,9 @@ public class Consola {
         int opcion;
         do {
             System.out.print("Elige una opción: ");
-            opcion = leerEntero("El valor introducido no es válido.");
+            opcion = org.iesalandalus.programacion.utilidades.Entrada.entero();
+            if (!Evento.esValido(opcion))
+                System.out.println("El valor introducido no es válido.");
         } while (!Evento.esValido(opcion));
         return Evento.get(opcion);
     }
