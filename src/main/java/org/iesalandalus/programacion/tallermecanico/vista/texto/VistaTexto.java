@@ -152,9 +152,4 @@ public class VistaTexto implements Vista {
     public void mostrarTrabajos(List<Trabajo> trabajos) {
         Consola.mostrarTrabajos(trabajos);
     }
-
-    @Override
-    public Evento elegirOpcion() {
-        return Consola.elegirOpcion();
-    }
 }
